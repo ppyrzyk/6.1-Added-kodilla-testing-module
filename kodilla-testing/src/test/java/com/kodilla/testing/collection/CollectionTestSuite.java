@@ -8,7 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 
 import java.util.ArrayList;
 
-@DisplayName("Collection test suite")
 
 public class CollectionTestSuite {
 
@@ -41,9 +40,9 @@ public class CollectionTestSuite {
         Assertions.assertEquals(normalArrayList, emptyArrayList);
     }
 
-    @DisplayName( "czy klasa zachowuje się poprawnie, gdy lista zawiera liczby parzyste i nieparzyste.")
 
     @Test
+    @DisplayName( "czy klasa zachowuje się poprawnie, gdy lista zawiera liczby parzyste i nieparzyste.")
     public void testOddNumbersExterminatorNormalList() {
 
         //czy klasa zachowuje się poprawnie, gdy lista zawiera liczby parzyste i nieparzyste
