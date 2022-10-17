@@ -1,59 +1,66 @@
-
 package com.kodilla.testing.collection;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.ArrayList;
 
+@DisplayName("Collection test suite")
 
 public class CollectionTestSuite {
-    private static int counter;
+
+    ArrayList<Integer> normalArrayList = new ArrayList<>();
+    ArrayList<Integer> emptyArrayList = new ArrayList<>();
 
     @Before
-    public void before() {
-        System.out.println("Begin test : " + counter );
+    public void before(){
+        System.out.println("Test Case: begin");
     }
+
     @After
-    public void after() {
-        System.out.println("End test : " + counter);
-        counter++;
+    public void after(){
+        System.out.println("Test Case: end");
     }
-
-    @DisplayName("Checking if the list is empty")
-
+    @DisplayName("czy klasa zachowuje się poprawnie, gdy lista jest pusta,")
 
     @Test
-//    test 0
-    public void testOddNumbersExterminatorEmptyList() {
-//given
-        List<Integer> numbers = Arrays.asList();
-        OddNumbersExterminator oddNumbers = new OddNumbersExterminator();
-        oddNumbers.exterminate(numbers);
-//when
-        List<Integer> listEven = oddNumbers.exterminate(numbers);
-//then
-        Assert.assertEquals(numbers.isEmpty(), listEven.isEmpty());
-    }
-    @DisplayName(
-            "Checking if the list has even numbers"
+    public void testOddNumberExterminatorEmptyList() {
+//        Given
 
-    )
+        System.out.println("Size of empty list: " + emptyArrayList.size());
+
+//        when
+        OddNumbersExterminator completedList = new OddNumbersExterminator(emptyArrayList);
+        completedList.exterminate(emptyArrayList);
+        System.out.println("Size of empty list: " + emptyArrayList.size());
+        System.out.println("Size of normal list: " + normalArrayList.size());
+//        Then
+        Assertions.assertEquals(normalArrayList, emptyArrayList);
+    }
+
+    @DisplayName( "czy klasa zachowuje się poprawnie, gdy lista zawiera liczby parzyste i nieparzyste.")
+
     @Test
-//     test 1
     public void testOddNumbersExterminatorNormalList() {
-//given
-        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        OddNumbersExterminator oddNumbers = new OddNumbersExterminator();
-        oddNumbers.exterminate(numbers);
-//when
-        List<Integer> listEven = oddNumbers.exterminate(numbers);
-//then
-        Assert.assertThat(listEven, CoreMatchers.hasItems(2, 4, 6, 8, 10));
+
+        //czy klasa zachowuje się poprawnie, gdy lista zawiera liczby parzyste i nieparzyste
+        //Given
+
+        for (int i=0; i<16; i++) {
+            normalArrayList.add(i);
+            if (normalArrayList.get(i) % 2 == 0) {
+                emptyArrayList.add(normalArrayList.get(i));
+            }
+        }
+        System.out.println("list generated, normal arrayList size: " + normalArrayList.size());
+        //When
+        OddNumbersExterminator completedList = new OddNumbersExterminator(normalArrayList);
+        completedList.exterminate(normalArrayList);
+
+        //Then
+        Assertions.assertEquals(emptyArrayList, normalArrayList);
     }
 }
