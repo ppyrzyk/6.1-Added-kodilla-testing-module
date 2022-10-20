@@ -22,8 +22,11 @@ class WeatherForecastTestSuite {
 
     @BeforeAll
     public static void before() {
-        System.out.println(" Weather forecast testing is starting!");
-
+        System.out.println("Weather forecast testing is starting!");
+    }
+    @AfterAll
+    public static void after() {
+        System.out.println("Weather forecast testing has finished");
     }
 
 
