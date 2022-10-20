@@ -22,12 +22,13 @@ public class ShapeCollector {
         return shapeCollection.get(n);
     }
 
-        public String getShowShapes() {
+    public String getShowShapes() {
             for (Shape collectionList : shapeCollection) {
                 System.out.println(collectionList.getShapeName());
             }
             return null;
         }
+
         public int getSize () {
             return shapeCollection.size();
         }
