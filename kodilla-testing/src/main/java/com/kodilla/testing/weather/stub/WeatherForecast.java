@@ -36,17 +36,25 @@ public class WeatherForecast {
     }
 
     public Map<String, Double> calculateTempMedian() {
-        Map<String, Double> medianList = new HashMap<>();
-        List<Map.Entry<String, Double>> sortedList = new ArrayList<>(medianList.entrySet());
-        Collections.sort(sortedList, new Comparator<Map.Entry<String, Double>>() {
-            @Override
-            public int compare(Map.Entry<String, Double> o1, Map.Entry<String, Double> o2) {
-                return 0;
+        Map<String, Double> list = new HashMap<>();
+        double medianTemp;
+        List<Double> tempList = new ArrayList<>();
+        for (Map.Entry<String, Double>
+                entry :temperatures.getTemperatures().entrySet()) {
+            tempList.add(entry.getValue());
+        }
+        Collections.sort(tempList);
+        System.out.println(tempList);
+
+        {
+            if (tempList.size() % 2 != 0) {
+                medianTemp = tempList.get(tempList.size() / 2);
+//                        System.out.println(medianTemp);
+            } else {
+                medianTemp = (tempList.get(tempList.size() / 2) + tempList.get(tempList.size() / 2 - 1)) /2;
+//                        System.out.println(medianTemp + " " + "nie parzyste");
             }
-
-            double medianTemp = sortedList.get(2).getValue();
-
-        });
-            return medianList;
+        }
+        return list;
     }
 }

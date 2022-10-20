@@ -66,28 +66,28 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addShape(square);
             shapeCollector.addShape(square);
 
-//                   When
+          // When
             Shape result= shapeCollector.getShape(0);
             Shape result1= shapeCollector.getShape(1);
             Shape result2= shapeCollector.getShape(2);
             Shape result3= shapeCollector.getShape(3);
 
-//                   Then
+          // Then
             Assertions.assertEquals(square, result3);
         }
-//        @DisplayName("Testing showing shapes in a String")
-//        @Test
-//        public void testGetShowShapes() {
-//            //      Given
-//            Circle circle = new Circle(4.5,3.14);
-//            Square square = new Square(9.0);
-//            shapeCollector.addShape(circle);
-//            shapeCollector.addShape(square);
-////                   When
-//            String shape = shapeCollector.getShowShapes();
-////                   Then
-//            Assertions.assertNotNull(shape);
-//
-//        }
-    }
+
+        @DisplayName("Testing showing shapes in a String")
+       @Test
+        public void testShowShapes() {
+        //Given
+            Circle circle = new Circle(4.5,3.14);
+            Square square= new Square(9.0);
+            shapeCollector.addShape(square);
+        //When
+            int expected =  shapeCollector.getSize();
+        //Then
+            Assertions.assertEquals(1, expected);
+        }
+
+        }
 }
