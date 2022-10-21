@@ -40,7 +40,8 @@ class WeatherForecastTestSuite {
         temperaturesMap.put("Warszawa", 25.2);
         temperaturesMap.put("Gdansk", 26.1);
         temperaturesMap.put("Torun", 27.1);
-        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+
+            when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         testCounter++;
         System.out.println("Test #" + testCounter + " is starting");
     }
@@ -88,7 +89,6 @@ class WeatherForecastTestSuite {
         Collections.sort(tempList);
 //        System.out.println(tempList);
         double medianTemp;
-
         {
                     if (tempList.size() % 2 != 0) {
                         medianTemp = tempList.get(tempList.size() / 2);
@@ -96,6 +96,7 @@ class WeatherForecastTestSuite {
                     } else {
                         medianTemp = (tempList.get(tempList.size() / 2) + tempList.get(tempList.size() / 2 - 1)) /2;
 //                        System.out.println(medianTemp + " " + "nie parzyste");
+//                        System.out.println(tempList.get(2) + " " + tempList.get(3) );3
                     }
                 }
 
