@@ -2,6 +2,7 @@ package com.kodilla.stream;
 
 import com.kodilla.lambda.ExpressionExecutor;
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
 
@@ -33,6 +34,10 @@ public class StreamMain {
         poemBeautifier.beautify("Indenting the text by 8 spaces",text -> text.indent(8)); // next line after indenting is blank
         poemBeautifier.beautify("Concatenating text: 1st part with ",text -> text.concat(" the 2nd part"));
 
+//Numbers Generator
+
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
 
 
     }
