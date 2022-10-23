@@ -33,6 +33,7 @@ public class StreamMain {
         poemBeautifier.beautify("DOES TEXT IN LOWER CASE LOOK BETTER?",text -> text.toLowerCase());
         poemBeautifier.beautify("Indenting the text by 8 spaces",text -> text.indent(8)); // next line after indenting is blank
         poemBeautifier.beautify("Concatenating text: 1st part with ",text -> text.concat(" the 2nd part"));
+        poemBeautifier.beautify("Hello!",text -> text.repeat(6));
 
 //Numbers Generator
 
