@@ -1,15 +1,31 @@
 package com.kodilla.stream;
 
 
-import com.kodilla.stream.book.Book;
-import com.kodilla.stream.book.BookDirectory;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
 
+import java.time.LocalDate;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StreamMain {
 
-//    Kolektor Collectors.toList()
+
+
     public static void main(String[] args) {
+
+        Forum theForum = new Forum();
+        Map<Integer, ForumUser> theResultOfUsernamesList = theForum.getUserList().stream()
+                .filter(forumUser -> forumUser.getSex() == 'M')
+                .filter(forumUser -> forumUser.getDateOfBirth().getYear() > LocalDate.now().getYear()-20)
+                .filter(forumUser -> forumUser.getNumberOfPosts() > 1)
+                .collect(Collectors.toMap(ForumUser::getIdNumber, forumUser -> forumUser));
+        System.out.println("# elements: " + theResultOfUsernamesList.size());
+        theResultOfUsernamesList.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
+
+    }
 //        BookDirectory theBookDirectory = new BookDirectory();
 //        List<Book> theResultListOfBooks = theBookDirectory.getList().stream()   // [1]
 //                .filter(book -> book.getYearOfPublication() > 2005)                  // [2]
@@ -34,13 +50,13 @@ public class StreamMain {
 
 //      Kolektor Collectors.joining()- Collectors.joining(String delimiter, String prefix, String suffix)
 
-        BookDirectory theBookDirectory = new BookDirectory();
-        String theResultStringOfBooks = theBookDirectory.getList().stream()  // [1]
-                .filter(book -> book.getYearOfPublication() > 2005)
-                .map(Book::toString)
-                .collect(Collectors.joining(",\n","<<",">>"));                    // [2]
-
-        System.out.println(theResultStringOfBooks);
+//        BookDirectory theBookDirectory = new BookDirectory();
+//        String theResultStringOfBooks = theBookDirectory.getList().stream()  // [1]
+//                .filter(book -> book.getYearOfPublication() > 2005)
+//                .map(Book::toString)
+//                .collect(Collectors.joining(",\n","<<",">>"));                    // [2]
+//
+//        System.out.println(theResultStringOfBooks);
     }
 //   Powyższy kod tworzy strumień Stream dla kolekcji zwracanej przez metodę getList() klasy BookDirectory- filtruje ( PY >2005) i wyświetla obiekty książek
 //        BookDirectory theBookDirectory = new BookDirectory();
@@ -48,7 +64,7 @@ public class StreamMain {
 //                .filter(book -> book.getYearOfPublication() > 2005)
 //                .forEach(System.out::println);
 //    }
-}
+
 //        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 //
 //        System.out.println("Calculating expressions with lambdas");
