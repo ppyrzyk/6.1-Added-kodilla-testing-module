@@ -20,7 +20,7 @@ public class ShapeCollectorTestSuite {
         System.out.println("Testing terminated !");
     }
     @BeforeEach
-    public void setup() {
+    void setup() {
         shapeCollector = new ShapeCollector();
         testCounter++;
         System.out.println("Test #" + testCounter + " is starting");
