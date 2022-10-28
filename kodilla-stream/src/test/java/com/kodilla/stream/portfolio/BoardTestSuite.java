@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -166,9 +167,29 @@ class BoardTestSuite {
         System.out.println(countOfIPTasks);
         Assert.assertEquals(10.0, Average, 1);
         System.out.println(Average);
+    }
+    @Test
+    void testAddTaskListAverageWorkingOnTask2(){
+//        Given
+        Board project = prepareTestData();
+//        When
+        List<TaskList> averageInProgressTasks = new ArrayList<>();
+        averageInProgressTasks.add(new TaskList( "In progress"));
+        double average = project.getTaskLists().stream()
+                .filter(averageInProgressTasks::contains)
+                .flatMap(ip-> ip.getTasks().stream())
+                .map(task-> ChronoUnit.DAYS.between(task.getCreated(), LocalDate.now()))
+                .mapToDouble(l-> l)
+                .average()
+                .getAsDouble();
+
+//        Then
+        assertEquals( 10.0, average);
+
+
+
 
 
     }
-
 
 }
