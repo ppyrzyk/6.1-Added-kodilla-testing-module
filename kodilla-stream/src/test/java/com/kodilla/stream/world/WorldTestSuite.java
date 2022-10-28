@@ -1,5 +1,8 @@
 package com.kodilla.stream.world;
 
+import com.kodilla.lambda.stream.world.Continent;
+import com.kodilla.lambda.stream.world.Country;
+import com.kodilla.lambda.stream.world.World;
 import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;

@@ -1,6 +1,7 @@
 package com.kodilla.stream.array;
 
 
+import com.kodilla.lambda.stream.array.ArrayOperations;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

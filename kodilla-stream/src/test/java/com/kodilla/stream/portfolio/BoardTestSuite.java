@@ -1,5 +1,9 @@
 package com.kodilla.stream.portfolio;
 
+import com.kodilla.lambda.stream.portfolio.Board;
+import com.kodilla.lambda.stream.portfolio.Task;
+import com.kodilla.lambda.stream.portfolio.TaskList;
+import com.kodilla.lambda.stream.portfolio.User;
 import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 

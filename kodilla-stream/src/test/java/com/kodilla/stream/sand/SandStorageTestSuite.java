@@ -1,5 +1,9 @@
 package com.kodilla.stream.sand;
 
+import com.kodilla.lambda.stream.sand.Africa;
+import com.kodilla.lambda.stream.sand.Asia;
+import com.kodilla.lambda.stream.sand.Europe;
+import com.kodilla.lambda.stream.sand.SandStorage;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

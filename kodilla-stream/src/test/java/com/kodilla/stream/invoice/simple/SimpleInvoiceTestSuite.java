@@ -1,5 +1,8 @@
 package com.kodilla.stream.invoice.simple;
 
+import com.kodilla.lambda.stream.invoice.simple.SimpleInvoice;
+import com.kodilla.lambda.stream.invoice.simple.SimpleItem;
+import com.kodilla.lambda.stream.invoice.simple.SimpleProduct;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

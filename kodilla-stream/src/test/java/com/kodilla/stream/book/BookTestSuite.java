@@ -1,5 +1,7 @@
 package com.kodilla.stream.book;
 
+import com.kodilla.lambda.stream.book.Book;
+import com.kodilla.lambda.stream.book.BookDirectory;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
