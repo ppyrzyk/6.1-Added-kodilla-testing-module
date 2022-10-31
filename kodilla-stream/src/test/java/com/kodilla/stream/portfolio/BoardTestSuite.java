@@ -188,7 +188,7 @@ class BoardTestSuite {
                 .getAsDouble();
 
 //        Then
-        assertEquals( 10.0, average);
+        assertEquals( 10.0, average,1.0);
 
 
 

@@ -1,4 +1,11 @@
 rootProject.name = 'kodilla-course'
 include 'kodilla-testing'
 include 'kodilla-stream'
+include 'com.kodilla.rps'
+include 'kodilla-rps'
+include 'kodilla-exception'
+include 'kodilla-exception:com.kodilla.exception.io'
+findProject(':kodilla-exception:com.kodilla.exception.io')?.name = 'com.kodilla.exception.io'
+include 'kodilla-exception'
+include 'kodilla-exception'
 
