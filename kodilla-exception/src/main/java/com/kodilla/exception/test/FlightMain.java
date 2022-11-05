@@ -12,7 +12,8 @@ public class FlightMain {
             System.out.println(e);
         } catch (RouteNotFoundException e) {
             System.out.println(e);
-
+        }finally{
+            System.out.println("Thank you for using Flight Finder");
         }
     }
 }
