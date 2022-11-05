@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FlightFinder {
 
-    public void findFlight(Flight flight) throws RouteNotFoundException{
+    public void findFlight(Flight flight) throws RouteNotFoundException, DepartureAirportException {
         Map<String, Boolean> airportAvailability = new HashMap<>();
 
         airportAvailability.put("JFK", true);
@@ -20,9 +20,9 @@ public class FlightFinder {
 
 
         if(airportAvailability.containsKey(flight.getDepartureAirport())){
-            System.out.println("The flight will depart from " + flight.departureAirport);
+            System.out.println("The flight will depart from: " + flight.departureAirport);
         }else{
-            System.out.println("Departure airport not found");
+            throw new DepartureAirportException();
         }
         if (airportAvailability.containsKey(flight.getArrivalAirport())
                 && airportAvailability.get(flight.arrivalAirport)) {
