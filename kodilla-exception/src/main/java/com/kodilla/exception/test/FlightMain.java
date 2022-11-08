@@ -3,7 +3,7 @@ package com.kodilla.exception.test;
 public class FlightMain {
 
     public static void main (String[] args){
-        Flight flight = new Flight("gjb", "nbb");
+        Flight flight = new Flight("JFK", "KRK");
         FlightFinder flightFinder= new FlightFinder();
 
         try{
@@ -13,7 +13,7 @@ public class FlightMain {
         } catch (RouteNotFoundException e) {
             System.out.println(e);
         }finally{
-            System.out.println("Thank you for using Flight Finder");
+            System.out.println("Thank you for using Flight Finder!!!!");
         }
     }
 }
