@@ -1,12 +1,12 @@
 package com.kodilla.good.patterns.challenges;
 
-public class RentalProcessor {
+public class PurchaseProcessor {
 
     private InformationService informationService;
     private SaleService saleService;
     private SaleRepository saleRepository;
 
-    public RentalProcessor(InformationService informationService, SaleService saleService, SaleRepository saleRepository) {
+    public PurchaseProcessor(InformationService informationService, SaleService saleService, SaleRepository saleRepository) {
         this.informationService = informationService;
         this.saleService = saleService;
         this.saleRepository = saleRepository;
