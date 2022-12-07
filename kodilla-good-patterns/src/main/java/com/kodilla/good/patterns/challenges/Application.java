@@ -9,7 +9,7 @@ public class Application {
 
         PurchaseProcessor purchaseProcessor = new PurchaseProcessor(new EmailInfoService(), new ProductSoldService(),
                 new DataBaseRepository());
-        purchaseProcessor.process(order);
+        purchaseProcessor.process(order);:
 
     }
 }
