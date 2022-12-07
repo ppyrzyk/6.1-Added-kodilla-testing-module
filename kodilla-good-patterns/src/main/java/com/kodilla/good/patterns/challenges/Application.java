@@ -7,9 +7,9 @@ public class Application {
         OrderRetriever orderRetriever = new OrderRetriever();
         Order order = orderRetriever.retrieve();
 
-        PurchaseProcessor rentalProcessor = new PurchaseProcessor(new EmailInfoService(), new ProductSoldService(),
+        PurchaseProcessor purchaseProcessor = new PurchaseProcessor(new EmailInfoService(), new ProductSoldService(),
                 new DataBaseRepository());
-        rentalProcessor.process(order);
+        purchaseProcessor.process(order);
 
     }
 }

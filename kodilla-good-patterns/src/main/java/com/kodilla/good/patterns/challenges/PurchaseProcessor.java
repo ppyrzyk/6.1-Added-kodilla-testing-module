@@ -2,9 +2,9 @@ package com.kodilla.good.patterns.challenges;
 
 public class PurchaseProcessor {
 
-    private InformationService informationService;
-    private SaleService saleService;
-    private SaleRepository saleRepository;
+    private final InformationService informationService;
+    private final SaleService saleService;
+    private final SaleRepository saleRepository;
 
     public PurchaseProcessor(InformationService informationService, SaleService saleService, SaleRepository saleRepository) {
         this.informationService = informationService;
