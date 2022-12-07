@@ -8,7 +8,7 @@ public class PurchaseProcessor {
 
     public PurchaseProcessor(InformationService informationService, SaleService saleService, SaleRepository saleRepository) {
         this.informationService = informationService;
-        this.saleService = saleService;
+        this.saleService = saleService;:
         this.saleRepository = saleRepository;
     }
 
