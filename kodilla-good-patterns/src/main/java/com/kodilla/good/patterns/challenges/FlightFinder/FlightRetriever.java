@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.challenges.FlightFinder;
 
 public class FlightRetriever {
 
-    public static AddingFlight retrieve() {
+    public static FlightRepository retrieve() {
 
         Flight flight1 = new Flight("KRK","WAW","WRO","8:10", "9:00", 1002);
         Flight flight2 = new Flight("KRK","WRO","WAW", "9:20", "11:20", 1290);
@@ -14,7 +14,7 @@ public class FlightRetriever {
         Flight flight8 = new Flight("KRK","WRO","WAW", "17:35", "19:30", 1973);
 
 
-        AddingFlight addingFlight = new AddingFlight();
+        FlightRepository addingFlight = new FlightRepository();
             addingFlight.addFlight(flight1);
             addingFlight.addFlight(flight2);
             addingFlight.addFlight(flight3);

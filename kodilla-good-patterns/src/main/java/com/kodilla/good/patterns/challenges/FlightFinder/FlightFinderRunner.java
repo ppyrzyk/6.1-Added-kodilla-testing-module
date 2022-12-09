@@ -4,7 +4,7 @@ public class FlightFinderRunner {
 
     public static void main(String[] args) {
 
-        AddingFlight addingFlight = FlightRetriever.retrieve();
+        FlightRepository addingFlight = FlightRetriever.retrieve();
 
         FlightBrowser flightBrowser= new FlightBrowser(addingFlight.getListOfFlights());
 
