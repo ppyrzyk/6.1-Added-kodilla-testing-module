@@ -12,5 +12,6 @@ public class FlightFinderRunner {
         flightBrowser.browseByDepartureCity("KRK");
         flightBrowser.browseByLayoverCity("KRK", "WAW", "WRO");
         flightBrowser.browseByLayoverCity2("KRK");
+
     }
 }

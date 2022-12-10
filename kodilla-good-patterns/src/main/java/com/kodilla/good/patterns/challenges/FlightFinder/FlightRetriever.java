@@ -27,7 +27,5 @@ public class FlightRetriever {
 
         return addingFlight;
 
-
-
     }
 }
