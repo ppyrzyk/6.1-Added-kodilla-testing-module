@@ -37,5 +37,15 @@ public class FlightBrowser {
                 .collect(Collectors.toList());
         listOfLayoverFlights.stream()
                 .forEach(System.out::println);
+        System.out.println();
+    }
+    public void browseByLayoverCity2(String layOverCityName) {
+        System.out.println("List of flights with a layover in " + layOverCityName);
+            listOfFlights.stream()
+                    .filter(f->f.getLayOverCity().equals(layOverCityName))
+                    .map(f->f.toString())
+                    .collect(Collectors.toList())
+                    .forEach(System.out::println);
+        System.out.println();
     }
 }
