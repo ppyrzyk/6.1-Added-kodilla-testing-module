@@ -47,6 +47,5 @@ public class FlightBrowser {
                     .collect(Collectors.toList())
                     .forEach(System.out::println);
         System.out.println();
-
     }
 }
