@@ -56,5 +56,6 @@ class KodillaSpringApplicationTests {
 		String name = shape.getShapeName();
 //		Then
 		System.out.println("Chosen shape name " + name);
+
 	}
 }

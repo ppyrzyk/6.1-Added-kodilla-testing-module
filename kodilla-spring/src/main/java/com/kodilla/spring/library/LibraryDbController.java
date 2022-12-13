@@ -10,5 +10,6 @@ public final class LibraryDbController {
     }
     public void loadData() {
         System.out.println("Loading data from the database");
+
     }
 }

@@ -7,6 +7,7 @@ public class Display {
 
     public double displayValue(double val){
         return val;
+
     }
 }
 

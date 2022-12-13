@@ -24,6 +24,5 @@ public class CalculatorTestSuite {
         assertEquals(5,result3);
         assertEquals(5,result4);
 
-
     }
 }
