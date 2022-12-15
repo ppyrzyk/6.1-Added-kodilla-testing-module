@@ -9,4 +9,5 @@ findProject(':kodilla-exception:com.kodilla.exception.io')?.name = 'com.kodilla.
 include 'kodilla-exception'
 include 'kodilla-exception'
 include 'kodilla-good-patterns'
-
+include 'kodilla-spring-intro'
+include 'kodilla-spring'
