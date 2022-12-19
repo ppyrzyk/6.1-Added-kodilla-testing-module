@@ -16,5 +16,6 @@ public class LoggerTestSuite {
 
         //Then
         assertEquals("test log",lastLog);
+
     }
 }
