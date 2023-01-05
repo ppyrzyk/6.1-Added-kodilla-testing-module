@@ -1,4 +1,4 @@
-package com.kodilla.patterns.strategy.predictors;
+package com.kodilla.patterns.strategy;
 
 import com.kodilla.patterns.strategy.BuyPredictor;
 
