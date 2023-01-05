@@ -28,6 +28,7 @@ public class UserTestSuite {
     void testIndividualStrategy(){
 //        Given
         User paul = new ZGeneration("Paul Smith");
+//        System.out.println(paul.getName() + paul.getSocialPublisher().share());
 //        When
         paul.setSocialPublisher(new TwitterPublisher());
 //        Then

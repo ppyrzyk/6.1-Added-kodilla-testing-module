@@ -1,6 +1,6 @@
 package com.kodilla.patterns.strategy.social;
 
-public class User {
+public sealed class User permits YGeneration, ZGeneration, Millenials {
 
     private final String name;
     protected SocialPublisher socialPublisher;
@@ -12,6 +12,7 @@ public class User {
     public String getName() {
         return name;
     }
+
     public void sharePost() {
         System.out.println("Post shared on:" + socialPublisher.share());
     }
@@ -19,6 +20,7 @@ public class User {
     public SocialPublisher getSocialPublisher() {
         return socialPublisher;
     }
+
 
     public void setSocialPublisher(SocialPublisher socialPublisher) {
         this.socialPublisher = socialPublisher;

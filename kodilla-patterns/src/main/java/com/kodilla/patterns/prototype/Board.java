@@ -68,3 +68,4 @@ public class Board extends Prototype<Board> {
         return Objects.hash(name, lists);
     }
 }
+
