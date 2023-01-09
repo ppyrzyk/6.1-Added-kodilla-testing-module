@@ -16,7 +16,7 @@ public class Triangle implements Shape {
     }
 
     public double getShapeArea() {
-        return (sideA * sideB)/.5;
+        return (sideA * sideB)*.5;
     }
 
 

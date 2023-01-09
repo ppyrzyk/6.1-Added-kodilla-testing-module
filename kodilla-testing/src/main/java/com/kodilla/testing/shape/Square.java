@@ -5,7 +5,7 @@ public class Square implements Shape {
 
     private double side;
 
-    public Square( Double area) {
+    public Square( Double side) {
 
         this.side = side;
     }

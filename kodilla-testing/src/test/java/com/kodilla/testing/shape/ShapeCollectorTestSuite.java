@@ -3,6 +3,8 @@ package com.kodilla.testing.shape;
 
 import org.junit.jupiter.api.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @DisplayName("ShapeCollector tests")
 public class ShapeCollectorTestSuite {
 
@@ -10,6 +12,7 @@ public class ShapeCollectorTestSuite {
 
 
     ShapeCollector shapeCollector;
+    Shape shape;
 
     @BeforeAll
     public static void before() {
@@ -39,7 +42,7 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addShape(square);
             shapeCollector.addShape(circle);
             //      Then
-            Assertions.assertEquals(circle, shapeCollector.getShape(1));
+            assertEquals(square, shapeCollector.getShape(0));
 
         }
 
@@ -53,7 +56,7 @@ public class ShapeCollectorTestSuite {
             boolean result = shapeCollector.removeShape(square);
             //      Then
             Assertions.assertTrue(result);
-            Assertions.assertEquals(0, shapeCollector.getSize());
+            assertEquals(0, shapeCollector.getSize());
         }
 
         @DisplayName("Testing getting a shape")
@@ -73,7 +76,7 @@ public class ShapeCollectorTestSuite {
             Shape result3= shapeCollector.getShape(3);
 
           // Then
-            Assertions.assertEquals(square, result3);
+            assertEquals(square, result3);
         }
 
         @DisplayName("Testing showing shapes in a String")
@@ -83,10 +86,28 @@ public class ShapeCollectorTestSuite {
             Circle circle = new Circle(4.5,3.14);
             Square square= new Square(9.0);
             shapeCollector.addShape(square);
+            shapeCollector.addShape(circle);
+
         //When
             int expected =  shapeCollector.getSize();
         //Then
-            Assertions.assertEquals(1, expected);
+            assertEquals(2, expected);
+        }
+        @DisplayName("Testing getting Area")
+        @Test
+        public void getArea() {
+            //Given
+            Circle circle= new Circle(5, 3.14);
+            Square square= new Square(3.0);
+            Triangle triangle = new Triangle(4.0, 5.0);
+            //When
+            double circ = circle.getShapeArea();
+            double squa = square.getShapeArea();
+            double tria = triangle.getShapeArea();
+            //Then
+            assertEquals(78.5, circ, 0.1);
+            assertEquals(9.0, squa);
+            assertEquals(10, tria);
         }
 
         }
