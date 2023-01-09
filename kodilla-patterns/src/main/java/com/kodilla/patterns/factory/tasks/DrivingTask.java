@@ -5,7 +5,7 @@ public class DrivingTask implements Task {
     private String taskName;
     private String where;
     private String using;
-    boolean status = false;
+    boolean status;
 
 
     public DrivingTask(String taskName, String where, String using) {

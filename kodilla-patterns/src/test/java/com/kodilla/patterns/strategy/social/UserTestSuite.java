@@ -35,4 +35,14 @@ public class UserTestSuite {
         assertEquals(" is using Twitter to communicate", paul.getSocialPublisher().share());
         System.out.println(paul.getName() + paul.getSocialPublisher().share());
     }
+    @Test
+    void sharingPost() {
+//            given
+        User jan = new ZGeneration("Jan Addy");
+//        when
+        String post = jan.sharePost();
+//        then
+        assertEquals("post shared: is using Snapchat to communicate", post);
+        System.out.println(jan.getName()+ "'s " + post);
+    }
 }

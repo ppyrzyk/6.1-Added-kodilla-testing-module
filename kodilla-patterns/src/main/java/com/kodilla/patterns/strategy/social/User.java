@@ -13,8 +13,8 @@ public sealed class User permits YGeneration, ZGeneration, Millenials {
         return name;
     }
 
-    public void sharePost() {
-        System.out.println("Post shared on:" + socialPublisher.share());
+    public String sharePost() {
+        return "post shared:" + socialPublisher.share();
     }
 
     public SocialPublisher getSocialPublisher() {

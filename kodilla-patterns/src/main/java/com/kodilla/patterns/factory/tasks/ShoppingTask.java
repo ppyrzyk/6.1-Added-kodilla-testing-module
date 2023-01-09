@@ -4,7 +4,7 @@ public class ShoppingTask implements Task {
     private String taskName;
     private String whatToBuy;
     private double quantity;
-    private boolean status = false;
+    private boolean status;
 
 
     public ShoppingTask(String taskName, String whatToBuy, double quantity) {
