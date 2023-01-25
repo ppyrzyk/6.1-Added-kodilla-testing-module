@@ -24,31 +24,45 @@ public class TaskList {
         this.description = description;
     }
 
+
     @Id
-    @GeneratedValue
     @NotNull
-    @Column(name = "ID")
+    @GeneratedValue
+    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
     @Column(name = "LISTNAME")
     public String getListName() {
         return listName;
     }
 
-    public void setListName(String listName) {
-        this.listName = listName;
-    }
+
     @Column(name = "DESCRIPTION")
     public String getDescription() {
         return description;
     }
-
+    @OneToMany(
+            targetEntity = Task.class,
+            mappedBy = "taskList",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    public List<Task> getTasks() {
+        return tasks;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setListName(String listName) {
+        this.listName = listName;
+    }
     public void setDescription(String description) {
         this.description = description;
+    }
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
     }
 }
