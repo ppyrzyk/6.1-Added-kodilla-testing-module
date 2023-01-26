@@ -53,7 +53,7 @@ public class InvoiceDaoTestSuite {
         assertEquals("butter", productName);
 
 //        CleanUp
-        invoiceDao.delete(invoice1);
+//        invoiceDao.delete(invoice1);
     }
 
 
