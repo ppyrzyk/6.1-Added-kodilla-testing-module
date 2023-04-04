@@ -1,13 +1,9 @@
 package com.kodilla.patterns2.facade;
 
 
-
-import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-@Service
 public class Order {
 
     private ProductService productService;
