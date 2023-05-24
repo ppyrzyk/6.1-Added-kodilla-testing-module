@@ -41,6 +41,7 @@ public class Employee {
     public void setId(int id) {
         this.id = id;
     }
+
     @NotNull
     @Column (name = "FIRSTNAME")
     public String getFirstname() {
@@ -50,6 +51,7 @@ public class Employee {
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
+
     @NotNull
     @Column(name = "LASTNAME")
     public String getLastname() {
@@ -59,6 +61,7 @@ public class Employee {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "JOIN_COMPANY_EMPLOYEE",

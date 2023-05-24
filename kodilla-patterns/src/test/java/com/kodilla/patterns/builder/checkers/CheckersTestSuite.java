@@ -26,7 +26,7 @@ public class CheckersTestSuite {
 //        Then
         assertEquals(Figure.WHITE, figureOne.getColor());
         assertEquals(Pawn.class, figureTwo.getClass());
-//        System.out.println(Pawn.class);
+//        System.out.println(Pawn.BLACK);
         assertEquals(Queen.class, figureThree.getClass());
 //        System.out.println(Queen.class);
         assertNull(figureFour);

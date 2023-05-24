@@ -44,15 +44,14 @@ public class Company {
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
-
     public List<Employee> getEmployees() {
         return employees;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
     private void setEmployees(List<Employee> employees) {
         this.employees = employees;

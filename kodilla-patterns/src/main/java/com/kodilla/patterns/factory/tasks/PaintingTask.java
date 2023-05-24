@@ -2,9 +2,13 @@ package com.kodilla.patterns.factory.tasks;
 
 public class PaintingTask implements Task{
 
-    private String taskName;
-    private String color;
-    private String whatToPaint;
+     String taskName;
+     String color;
+     String whatToPaint;
+
+    public String getColor() {
+        return color;
+    }
 
     private boolean status;
 
@@ -30,4 +34,5 @@ public class PaintingTask implements Task{
     public boolean isTaskExecuted() {
         return status;
     }
+
 }

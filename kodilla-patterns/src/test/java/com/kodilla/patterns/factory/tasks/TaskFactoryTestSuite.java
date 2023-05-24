@@ -40,4 +40,13 @@ public class TaskFactoryTestSuite {
         assertTrue(painting.isTaskExecuted());
         assertEquals("painting", painting.getTaskName());
     }
+    @Test
+    void testPaintingColor(){
+//        Given
+        TaskFactory factory = new TaskFactory();
+//      When
+        Task painting = factory.createTask(TaskFactory.PAINTING);
+//        then
+        assertEquals("red", painting.getColor());
+    }
 }

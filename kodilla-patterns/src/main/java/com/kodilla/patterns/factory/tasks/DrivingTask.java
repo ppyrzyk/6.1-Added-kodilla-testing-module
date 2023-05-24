@@ -29,4 +29,9 @@ public class DrivingTask implements Task {
     public boolean isTaskExecuted() {
         return status;
     }
+
+    @Override
+    public String getColor() {
+        return null;
+    }
 }

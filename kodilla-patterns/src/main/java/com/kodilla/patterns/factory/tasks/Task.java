@@ -5,4 +5,6 @@ public interface Task {
      String executeTask();
      String getTaskName();
      boolean isTaskExecuted();
+
+     String getColor();
 }

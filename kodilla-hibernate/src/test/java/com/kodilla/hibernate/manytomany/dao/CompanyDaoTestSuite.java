@@ -3,13 +3,16 @@ package com.kodilla.hibernate.manytomany.dao;
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
@@ -21,7 +24,7 @@ public class CompanyDaoTestSuite {
     void testSaveManyToMany() {
 //        Given
         Employee johnSmith = new Employee("John", "Smith");
-        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee stephanieClarkson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
         Company softwareMachine = new Company("Software Machine");
@@ -29,14 +32,14 @@ public class CompanyDaoTestSuite {
         Company greyMatter = new Company("Grey Matter");
 
         softwareMachine.getEmployees().add(johnSmith);
-        dataMaesters.getEmployees().add(stephanieClarckson);
+        dataMaesters.getEmployees().add(stephanieClarkson);
         dataMaesters.getEmployees().add(lindaKovalsky);
         greyMatter.getEmployees().add(johnSmith);
         greyMatter.getEmployees().add(lindaKovalsky);
 
         johnSmith.getCompanies().add(softwareMachine);
         johnSmith.getCompanies().add(greyMatter);
-        stephanieClarckson.getCompanies().add(dataMaesters);
+        stephanieClarkson.getCompanies().add(dataMaesters);
         lindaKovalsky.getCompanies().add(dataMaesters);
         lindaKovalsky.getCompanies().add(greyMatter);
 
@@ -140,18 +143,18 @@ public class CompanyDaoTestSuite {
         int greyMatterId = greyMatter.getId();
 
         //When
-        List<Company> companyNativeQuery = companyDao.retrieveCompaniesNameStartsWith("dat");
+        List<Company> companyNativeQuery = companyDao.searchCompanyByName("dataMasters");
 
         //Then
-        assertNotEquals(0, companyNativeQuery.size());
+        assertEquals(1, companyNativeQuery.size());
 
         //CleanUp
-        try {
-            companyDao.deleteById(softwareMachineId);
-            companyDao.deleteById(dataMastersId);
-            companyDao.deleteById(greyMatterId);
-        } catch (Exception e) {
-            //do nothing
+//        try {
+//            companyDao.deleteById(softwareMachineId);
+//            companyDao.deleteById(dataMastersId);
+//            companyDao.deleteById(greyMatterId);
+//        } catch (Exception e) {
+//            //do nothing
         }
     }
-}
+
